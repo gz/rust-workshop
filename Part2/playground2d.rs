@@ -1,11 +1,6 @@
-// threads4.rs
-// Execute `rustlings hint threads4` for hints :)
-
-// I AM NOT DONE
-
 use std::sync::mpsc;
 use std::thread;
-
+// use crossbeam::thread;
 
 // Our final `map_with_threads` will be a more realistic version of a parallel map()
 // -- similar to rust's amazing data-parallel library rayon.
