@@ -16,7 +16,7 @@ where
     // in place (the slice is mutable after all).
     //
     // The compiler tells us we can't do this?
-    // Do you understand why? Use rustlings hint threads4 for an explanation.
+    // Do you understand why?
     //
     // Unfortunately, this problem can't be solved with `std::thread`.
     // However, there is an alternative threading library from crossbeam 
@@ -28,12 +28,12 @@ where
     thread::scope(|s| {
         s.spawn(move |_| {
             for e in lo {
-                *e = *e*2;
+                *e = fun(*e);
             }
         });
         s.spawn(move |_| {
             for e in hi {
-                *e = *e*2;
+                *e = fun(*e);
             }
         });
     }).unwrap();
