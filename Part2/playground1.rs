@@ -61,6 +61,8 @@ fn main() {
     rustlings run move_semantics2
     rustlings run move_semantics3
     rustlings run move_semantics4
+    rustlings run lifetimes1
+    rustlings run lifetimes2
     */
     
     // 
