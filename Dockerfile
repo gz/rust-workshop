@@ -1,4 +1,4 @@
-ARG DEBIAN_VERSION
+ARG DEBIAN_VERSION=bullseye
 FROM debian:${DEBIAN_VERSION}-slim
 
 ENV RUSTUP_HOME=/usr/local/rustup \
@@ -12,6 +12,7 @@ RUN set -eux; \
         gcc \
         libc6-dev \
         wget \
+        git \
         ; \
     dpkgArch="$(dpkg --print-architecture)"; \
     case "${dpkgArch##*-}" in \
@@ -26,6 +27,7 @@ RUN set -eux; \
     ./rustup-init -y --no-modify-path --default-toolchain stable; \
     rm rustup-init; \
     chmod -R a+w $RUSTUP_HOME $CARGO_HOME; \
+    chmod -R a+rw $HOME; \
     rustup --version; \
     cargo --version; \
     rustc --version; \
