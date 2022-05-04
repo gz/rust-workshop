@@ -41,29 +41,30 @@ fn borrow_and_print(s: &String) {
     println!("{}", s);
 }
 
-/*fn mut_borrow_and_append(s: &mut String) {
+fn mut_borrow_and_append(s: &mut String) {
     s.push_str(" and welcome back");
-}*/
-
-/*fn mut_borrow_twice_and_append(s1: &mut String, s2: &mut String) {
-    s1.push_str(" and welcome back");
-    s2.push_str(", and again");
-}*/
-
-// Second, any borrow must last for a scope no greater than that of the owner. 
-/*
-fn take_two_return_one(x: &u32, y: &u32) -> &u32 {
-    x
 }
 
-fn lifetime_main() {
-    let x = 12;
+fn mut_borrow_twice_and_append(s1: &mut String, s2: &mut String) {
+    s1.push_str(" and welcome back");
+    s2.push_str(", and again");
+}
+
+//
+// Second, any borrow must last for a scope no greater than that of the owner. 
+//
+
+/*
+fn pass_x(x: &i32, y: &i32) -> &i32 { x }
+//fn pass_x<'a>(x: &'a i32, y: &'a i32) -> &'a i32 { x }
+
+fn lifetime_main(yref: &mut &i32) {
+    let x = 7;
+    let y = 9;
     
-    let z: &u32 = {
-        let y = 42;
-        take_two_return_one(&x, &y)
-    };
-}*/
+    let z = pass_x(&x, &y);
+}
+*/
 
 // Fortunately in most cases we don't have to annotate lifetimes in our program:
 // Lifetime elision rules: https://doc.rust-lang.org/nomicon/lifetime-elision.html

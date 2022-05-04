@@ -1,14 +1,14 @@
+#![allow(unused, dead_code)]
+
 // A function
 fn main() {
     let a = 10; // A variable
-    println!("Hello world {}!", a); // A macro to print
+    println!("Hello world {}!", a); // A macro (! at the end) to print
 }
 
 //
 // Basic data-types
 //
-
-#[allow(unused, dead_code)]
 fn basic_types() {
     let a: u8 = 1 + 4;
     let b: i64 = -3 * 2;
@@ -16,12 +16,10 @@ fn basic_types() {
     let d: char = 'a';
     // Can you guess some more types?
     //let big: u128 = 0xffff_ffff_ffff_ffff_ffff_ffff;
-
-    // type elision?
+    //type elision?
 }
 
     
-#[allow(unused, dead_code)]
 fn compound_types() {
     let mytuple: (i32, f64, char) = (500, 6.4, 'b');
     let myarray: [i32; 5] = [1, 2, 3, 4, 5];
@@ -30,7 +28,6 @@ fn compound_types() {
 
     // tuple access?
     // mutability?
-    // slicing?
 }
 
 //
@@ -52,7 +49,6 @@ impl User {
 
 struct UserInlined(&'static str, u64, bool);
 
-#[allow(unused, dead_code)]
 fn structs() {
     let user = User {
         username: "gerd",
@@ -63,7 +59,6 @@ fn structs() {
     
     let inlined_user = UserInlined("gerd", 1, false);
     
-    // Access/mutate members?
     // What about dynamic strings?
     // What is #[derive(Debug)]?
 }
@@ -72,7 +67,6 @@ fn structs() {
 // Enums
 //
 
-#[allow(unused, dead_code)]
 fn enums() {
     enum IpAddressKind {
         V4,

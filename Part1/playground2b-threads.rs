@@ -22,7 +22,7 @@ use std::thread;
 fn main2() {
     let numbers: Vec<u32> = (0..100u32).collect();
 
-    let t = thread::spawn(move || {
+    let t = thread::spawn(|| {
         let mut i = 0;
         let mut sum = 0;
         while i < numbers.len() {

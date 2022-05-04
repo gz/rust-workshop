@@ -10,7 +10,7 @@ struct MyWrapperString(String);
 // A "destructor" for MyWrapperString
 impl Drop for MyWrapperString {
     fn drop(&mut self) {
-        println!("4: String '{:?}' dropped", self.0);
+        println!("4: String {:?} dropped", self.0);
         // We could also do things like freeing memory here
         // (in fact this is what drop on String will execute eventually)
     }
